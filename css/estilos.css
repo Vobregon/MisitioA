@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Pacifico&display=swap');
-*{
-   box-sizing: border-box;
+* {
+    box-sizing: border-box;
 }
 body{
     font-family: 'Montserrat', sans-serif;
-    margin:0;
+    margin: 0;
 }
-/*----------------------------- Estilos Base---------------------------------- */
+/*--------------------Estilos en la base----------------*/
 img{
     display:block;
     width: 100%;
@@ -23,13 +23,12 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+  align-items: center;
 }
 .column {
     width: 100%;
 }
-
-/*------------------ header -----------------------------*/
+/*------------------------logo-----------------------------*/
 .main-header {
     width:100%;
 }
@@ -48,19 +47,19 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px;
 }
 .main-header__contactInfo__address{
-padding: 10px;
-    margin: 0;
-}
-.main-header [class*="icon-"]:before {
-    position: relative;
-    top: 2px;
-    right: 5px;
-}
-/*------------------ Estilos del Menu -----------------------------*/
+    padding: 10px;
+        margin: 0;
+    }
+   .main-header [class*="icon-"]:before {
+        position: relative;
+        top: 2px;
+        right: 5px;
+    }
+    /*------------------ Estilos del Menu -----------------------------*/
 .main-nav {
     width: 100%;
-    position: relative;
-    z-index: 2000;
+   position: relative;
+   z-index: 2000;
     padding: 10px;
 }
 .icon-menu{
@@ -70,9 +69,9 @@ padding: 10px;
     border-radius: 3px;
     width: 40px;
     height:40px;
-    line-height: 45px;
+    line-height: 45px; /*altura de linea*/
     text-align: center;
-    cursor: pointer;
+    cursor: pointer;/*para que aparesca la manito*/
     font-size: 1.5em;
 }
 .social-icon{
@@ -90,75 +89,351 @@ padding: 10px;
     width: 35px;
     height: 35px;
     background: white;
-    border-radius: 50%;
-        
-}
+    border-radius: 50%; /*para que el fondo de los iconos se vea redondeados*/
+ }
 .social-icon__link{
     text-decoration: none;
+        }
+        .menu{
+            position: absolute;
+            top:60px;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,.9);
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-align: center;
+            /*Comienza el click del menu para que aparesca y desaparesca*/
+            height: 0;/*ocultamos el menu height, overflow*/
+            overflow: hidden;/*ocultamos el menu height, overflow*/
+			transition: height .3s linear; /*la propiedad transition es para animar y es cuando hay un cambio de propiedad*/
+        }
+        .menu__link{
+            display: block;
+            padding: 15px;
+            color:  white;
+            text-decoration: none;
+        }
+        .menu__link:hover{
+            background: #DE423A;
+        }
+        .menu__link--select{
+            background: #DE423A;
+        }
+        /*------------------------2da parte del click--------------*/
+        .mostrar{/*creacion de la clase mostra de javascript*/
+            height: 196px;/*le puedes poner auto pero no va animar */
+        }
+        /*----------------------Estilos de banner--------------*/
+        .banner {
+            margin-top: -55px;
+            position: relative;/*Importante es posicion relative para que funcione banner:before,banner_content*/
+        }
+        .banner:before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            top: 0;
+        }
+        .banner__img{
+            width: 100%; /* si tan solo pongo el ancho el alto se calcula automaticamente*/
+            height: 500px;/* se pone el alto y  la imagen se deforma para pones el siguiente evento*/
+            object-fit: cover;/*con este evento la imagen no se deforma se adapta al area dada*/
+            
+        }
+        .banner__content{
+            width: 90%;
+            color: white;
+            text-align: center;
+            position: absolute;
+            z-index: 1500;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%) translateY(-50%);/*para centrar */
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        /*-----------Estilos de Bienvenido Restaurante-------------------------*/
+        .group--color {
+	    background: #DE423A;
+		color: white;
+		padding: 10px;
+		text-align: center;
+        }
+        .main__title{
+	    margin: 15px 0;
+		font-size: 1.8em;
+		font-family: 'Pacifico', cursive;	
+		font-weight: 100;
+        }
+        .column__title{
+	     font-size: 1.3em;
+        }
+.main__about__description .column:nth-child(2){
+	padding: 10px;
 }
-.menu{
-    position: absolute;
-    top:60px;
-    left: 0;
-    width: 100%;
-    background: rgba(0,0,0,.9);
-    padding: 0;
-    margin: 0;
-    list-style: none;
+.btn{
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	width: 120px;
+	background: #DE423A;
+	color: white;
+	padding: 10px;
+	margin: 10px auto;;
+	
+}
+/*----------------------Especiales de hoy------------------------*/
+.group__title{
+	font-family: 'Pacifico', cursive;	
+	text-align: center;
+	font-weight: 100;
+	font-style: 1.8em;
+	margin: 30px;
+}
+.today-special .column{
     text-align: center;
-	opacity: 0;
-	visibility: hidden;
-   /* height: 0;*/	
-   /* overflow: hidden;*/
-	/*transition: height .3s linear;*/
+	margin-bottom: 30px;
 }
-.menu__link{
-    display: block;
-    padding: 15px;
-    color:  white;
-    text-decoration: none;
+.today-special__img{
+	margin: auto;
 }
-.menu__link:hover{
-    background: #DE423A;
+.today-special__title{
+
+	font-size: 1.3em;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+.today-special__price{
+
+	font-size: 1.3em;
+	color: #DE423A;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+/*---------------------Estilos del footer------------------------------*/
+.main-footer{
+	
+	background: #222;
+	color: white;
+	padding: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: .8em;
+}
+.copy{
+	text-align: center;
+    margin: auto;
+	margin-top: 15px;
+
+}
+.main-footer [class*="icon-"]{
+	color: white;
+	text-decoration: none;
+		
+	
+}
+.main-footer [class*="icon-"]:before {
+	position:relative;
+	top:3px;
+	right: 5px;
 }
 
-.menu__link--select{
-    background: #DE423A;
+/*---------------------Responsive------------------------------*/
+@media screen and (min-width:480px){
+	.logo{
+		color: white;
+	}
+	.main-header__contactInfo{
+		text-align: right;
+	}
+	
+	.main-header__contactInfo__phone{
+		background: none;
+	}
+	.main-header__contactInfo__address{
+		color: white;
+	}
+	
+	.main-nav{
+        background: rgba(0,0,0,0.50);
+	
+	}
+	.banner{
+		margin-top: -200px;
+		z-index: -1000;
+	}
+	.banner__img{
+		height: 600px;
+	}
+	.banner__content{
+		font-size: 2em;
+	}
+	.main{
+		padding-bottom: 15px;
+	}
+	
+	.main__about__description .column:nth-child(2){
+	padding-left: 20px;
+		font-size: .9em;
 }
-.mostrar .menu{
-	visibility: visible;
-	opacity: 1;
-	/*height: 196px;*/
+	.main__about__description .btn{
+		margin: 0;
+	}
+	.today-special .column{
+		border: 5px solid #ddd;
+		padding: 5px;
+		
+	}
+	.today-special__img{
+		height: 200px;
+		object-fit: cover;
+	}
+	
+	.column--50{
+		width: 49%;
+	}
+	.column--50 img{
+			height: 220px;
+		object-fit: cover;
+	}
+	.column--50-25{
+		width: 49%;
+	}
+	
+	
+	.column--33{
+		width: 31%;
+	}
+	
 }
-/*------------------ Estilos del Banner -----------------------------*/
-.banner {
-    margin-top: -55px;
-    position: relative;
+/*---------------------Responsive----------------------------*/
+@media screen and (min-width:768px){
+.main__title{
+	font-size: 2.2em;
 }
-.banner:before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.65);
-    z-index: 1000;
-    top: 0;
+.main__about__description{
+	margin-top: 30px;
 }
-.banner__img{
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    
+.main__about__description .column--50:nth-child(2){
+	font-size: 1em;
 }
-.banner__content{
-    width: 90%;
-    color: white;
-    text-align: center;
-    position: absolute;
-    z-index: 1500;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%) translateY(-50%);
-    font-size: 1.5em;
-    font-weight: bold;
+.main__about__description .column--50:nth-child(2) .column__txt {
+	line-height: 27px;
+	
 }
+.column--50-25{
+	width: 24.5%;
+}
+.column__title{
+	font-size: 1em;
+}
+.group__title{
+	font-size: 2.2em;
+}
+
+	
+}
+
+
+
+/*
+@media screen and  (min-width:321px) and  (max-width:760px){
+.main__title{
+	font-size: 2.2em;
+}
+.main__about__description{
+	margin-top: 30px;
+}
+.main__about__description .column--50:nth-child(2){
+	font-size: 1em;
+}
+.main__about__description .column--50:nth-child(2) .column__txt {
+	line-height: 27px;
+	
+}
+.column--50--25{
+	width: 24.5%;
+}
+.column__title{
+	font-size: 1em;
+}
+.group__title{
+	font-size: 2.2em;
+}
+
+}
+*/
+
+@media screen and (min-width:1024px){
+	.container{
+		width: 1100px;
+	}
+	.logo{
+		font-size: 2em;
+		padding: 0;
+	}
+	.main-header__contactInfo__phone,
+	.main-header__contactInfo__address {
+	  padding-right: 0;
+		font-size: 1.15em;
+		
+	}
+	.main-nav{
+		padding: 0;
+	}
+	.banner__content{
+		font-size: 2.5em;
+	}
+	.icon-menu{
+		display: none;
+	}
+	.menu{
+		position:static;
+		display: flex;
+		height: auto;
+		width: auto;
+	}
+	.group--color .container{
+		margin-top: 30px;
+		margin-bottom: 30px;
+		padding: 20px;
+	}
+	.main__title{
+		font-size:2.5em;
+	}
+	.main__about__description .column--50:nth-child(2) .column__txt {
+	line-height: 50px;
+	
+}
+	.today-special__title{
+		font-size: 1.4em;
+	}
+	.today-special__price{
+		font-size: 1.8em;
+	}
+	.main-footer{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+}
+@media screen and (min-width:1600px){
+	.container{
+		width: 1400px;
+	}
+	.main__about__description .column:nth-child(1) img {
+	    width: 100%;
+		height: 350px;
+		object-fit: cover;
+	
+}
+	.today-special__img{
+		height: 300px;
+	}
+}
+
