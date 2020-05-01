@@ -225,6 +225,7 @@ h1, h2, h3, h4, h5, h6 {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	font-size: .8em;
+	
 }
 .copy{
 	text-align: center;
@@ -308,12 +309,23 @@ h1, h2, h3, h4, h5, h6 {
 	
 	
 	.column--33{
-		width: 31%;
+		width: 100%;
+		
 	}
 	
 }
+/*-------------------------*/
+@media screen and  (min-width:481px) and  (max-width:767px){
+.column--33{
+		width: 32%;
+		
+	}
+}
 /*---------------------Responsive----------------------------*/
 @media screen and (min-width:768px){
+	.container{
+		width: 768px;
+	}
 .main__title{
 	font-size: 2.2em;
 }
@@ -336,7 +348,10 @@ h1, h2, h3, h4, h5, h6 {
 .group__title{
 	font-size: 2.2em;
 }
-
+.column--33{
+		width: 32%;
+		
+	}
 	
 }
 
@@ -411,6 +426,12 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 50px;
 	
 }
+	.main-nav{
+		padding: 0;
+	}
+	.banner__img{
+		height: 700px;
+	}
 	.today-special__title{
 		font-size: 1.4em;
 	}
@@ -421,10 +442,18 @@ h1, h2, h3, h4, h5, h6 {
 		padding-top: 30px;
 		padding-bottom: 30px;
 	}
+	.column--33{
+		width: 32%;
+		
+	}
+	
 }
 @media screen and (min-width:1600px){
 	.container{
 		width: 1400px;
+	}
+	.banner__img{
+		height: 800px;
 	}
 	.main__about__description .column:nth-child(1) img {
 	    width: 100%;
@@ -435,5 +464,7 @@ h1, h2, h3, h4, h5, h6 {
 	.today-special__img{
 		height: 300px;
 	}
+	
+	
 }
 
